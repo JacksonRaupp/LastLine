@@ -1,7 +1,8 @@
-[gd_scene load_steps=13 format=3 uid="uid://b5k0co8ngs0fq"]
+[gd_scene load_steps=14 format=3 uid="uid://b5k0co8ngs0fq"]
 
 [ext_resource type="Script" path="res://script/player.cs" id="1_nchvp"]
 [ext_resource type="Texture2D" uid="uid://brl6376pv1c4i" path="res://art/test_player/Walk.png" id="2_55xlr"]
+[ext_resource type="PackedScene" uid="uid://b3gs3htgb4w81" path="res://scene/UI/texture_health_bar.tscn" id="3_untws"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_h6yvl"]
 atlas = ExtResource("2_55xlr")
@@ -85,3 +86,9 @@ position = Vector2(0, 5)
 shape = SubResource("CapsuleShape2D_j7qf3")
 
 [node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="TextureProgressBar" parent="Camera2D" instance=ExtResource("3_untws")]
+offset_left = -620.0
+offset_top = -322.0
+offset_right = -580.0
+offset_bottom = -261.0
