@@ -43,7 +43,6 @@ public partial class jaguar_enemie : CharacterBody2D
         {
             var scale = Scale.X;
             IsMovingLeft = !IsMovingLeft;
-            scale = -scale;
             GD.Print("tumdum");
         }
     }
