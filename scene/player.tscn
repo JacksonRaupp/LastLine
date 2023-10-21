@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://b5k0co8ngs0fq"]
+
+[ext_resource type="Script" path="res://script/player.cs" id="1_nchvp"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_j7qf3"]
+
+[node name="Player" type="CharacterBody2D"]
+position = Vector2(419, 316)
+script = ExtResource("1_nchvp")
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_j7qf3")
