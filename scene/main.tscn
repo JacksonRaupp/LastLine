@@ -1,10 +1,14 @@
-[gd_scene load_steps=4 format=3 uid="uid://bjkcnvjmlqmck"]
+[gd_scene load_steps=5 format=3 uid="uid://bjkcnvjmlqmck"]
 
+[ext_resource type="PackedScene" path="res://scene/level.tscn" id="1_7sn7c"]
+[ext_resource type="PackedScene" uid="uid://038tf76v36sp" path="res://scene/InitialScreen.tscn" id="1_klp67"]
 [ext_resource type="PackedScene" uid="uid://cbsjrt1locqwq" path="res://scene/level.tscn" id="1_7sn7c"]
 [ext_resource type="PackedScene" uid="uid://b5k0co8ngs0fq" path="res://scene/player.tscn" id="1_y0q4v"]
 [ext_resource type="PackedScene" uid="uid://bh2blp66w1gci" path="res://scene/jaguar_enemie.tscn" id="3_qfag7"]
 
 [node name="Main" type="Node"]
+
+[node name="InitialScreen" parent="." instance=ExtResource("1_klp67")]
 
 [node name="Level" parent="." instance=ExtResource("1_7sn7c")]
 
