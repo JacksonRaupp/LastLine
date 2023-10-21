@@ -5,6 +5,8 @@ public partial class jaguar_enemie : CharacterBody2D
 {
     public const float Speed = 300.0f;
 	public const float JumpVelocity = -400.0f;
+
+    public bool IsMovingLeft  = false;
     
     public Vector2 velocity;
 	public float gravity = ProjectSettings.GetSetting("physics/2d/default_gravity").AsSingle();
@@ -25,7 +27,10 @@ public partial class jaguar_enemie : CharacterBody2D
 
 
         TurnAround();
-        velocity.X = +Speed;
+        if (IsMovingLeft)
+            velocity.X = -Speed;
+        else
+            velocity.X = Speed;    
         Velocity = Velocity.Normalized() * Speed;
         animatedSprite2D.Play();
     }
@@ -34,8 +39,11 @@ public partial class jaguar_enemie : CharacterBody2D
     {
         var raycast = GetNode<RayCast2D>("RayCast2D");
 
-        if (!raycast.IsColliding())
+        if (!raycast.IsColliding() && IsOnFloor())
         {
+            var scale = Scale.X;
+            IsMovingLeft = !IsMovingLeft;
+            scale = -scale;
             GD.Print("tumdum");
         }
     }
