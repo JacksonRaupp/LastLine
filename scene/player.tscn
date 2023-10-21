@@ -11,3 +11,5 @@ metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_j7qf3")
+
+[node name="Camera2D" type="Camera2D" parent="."]
