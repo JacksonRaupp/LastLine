@@ -1,0 +1,91 @@
+[gd_scene load_steps=13 format=3 uid="uid://bh2blp66w1gci"]
+
+[ext_resource type="Script" path="res://scene/jaguar_enemie.cs" id="1_en42n"]
+[ext_resource type="Texture2D" uid="uid://cyni6nryv7l0y" path="res://assets/jaguar_enemie/cat.png" id="2_kfmqo"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_bulic"]
+radius = 5.0
+height = 18.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ul5ps"]
+atlas = ExtResource("2_kfmqo")
+region = Rect2(0, 128, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cyo7j"]
+atlas = ExtResource("2_kfmqo")
+region = Rect2(32, 128, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jjqwa"]
+atlas = ExtResource("2_kfmqo")
+region = Rect2(64, 128, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_00f5j"]
+atlas = ExtResource("2_kfmqo")
+region = Rect2(96, 128, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_imh42"]
+atlas = ExtResource("2_kfmqo")
+region = Rect2(128, 128, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_84cfk"]
+atlas = ExtResource("2_kfmqo")
+region = Rect2(160, 128, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dfwrt"]
+atlas = ExtResource("2_kfmqo")
+region = Rect2(192, 128, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s2nrb"]
+atlas = ExtResource("2_kfmqo")
+region = Rect2(224, 128, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_en7px"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ul5ps")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cyo7j")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jjqwa")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_00f5j")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_imh42")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_84cfk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dfwrt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s2nrb")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 5.0
+}]
+
+[node name="jaguar_enemie" type="CharacterBody2D"]
+position = Vector2(665, 408)
+scale = Vector2(4, 4)
+script = ExtResource("1_en42n")
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -1)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_bulic")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(-1, -10)
+sprite_frames = SubResource("SpriteFrames_en7px")
+animation = &"walk"
+frame_progress = 0.894065
