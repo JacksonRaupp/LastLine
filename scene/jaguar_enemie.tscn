@@ -88,4 +88,7 @@ shape = SubResource("CapsuleShape2D_bulic")
 position = Vector2(-1, -10)
 sprite_frames = SubResource("SpriteFrames_en7px")
 animation = &"walk"
-frame_progress = 0.894065
+frame_progress = 0.116592
+
+[node name="RayCast2D" type="RayCast2D" parent="."]
+position = Vector2(16, -41.25)
