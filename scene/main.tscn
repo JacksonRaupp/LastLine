@@ -11,4 +11,4 @@
 [node name="Player" parent="." instance=ExtResource("1_y0q4v")]
 
 [node name="jaguar_enemie" parent="." instance=ExtResource("3_qfag7")]
-position = Vector2(536, 456)
+position = Vector2(527, 456)
