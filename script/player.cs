@@ -11,6 +11,7 @@ public partial class player : CharacterBody2D
 	public override void _PhysicsProcess(double delta)
 	{
 		Vector2 velocity = Velocity;
+		var animatedSprite2D = GetNode<AnimatedSprite2D>("AnimatedSprite2D");
 
 		if (!IsOnFloor())
 			velocity.Y += gravity * (float)delta;
@@ -26,5 +27,10 @@ public partial class player : CharacterBody2D
 
 		Velocity = velocity;
 		MoveAndSlide();
+
+		if (velocity.X < 0)
+			animatedSprite2D.FlipH = true;
+		else
+			animatedSprite2D.FlipH = false;
 	}
 }
