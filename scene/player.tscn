@@ -195,7 +195,7 @@ animations = [{
 height = 78.0
 
 [node name="Player" type="CharacterBody2D"]
-position = Vector2(588, 409)
+position = Vector2(648, 336)
 script = ExtResource("1_nchvp")
 metadata/_edit_group_ = true
 
@@ -224,3 +224,16 @@ editor_draw_limits = true
 editor_draw_drag_margin = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+
+[node name="healthbar" type="ProgressBar" parent="."]
+modulate = Color(0.905882, 0.121569, 0.0156863, 1)
+self_modulate = Color(0.737255, 0.737255, 0.737255, 1)
+offset_left = -24.0
+offset_top = -40.0
+offset_right = 64.0
+offset_bottom = -13.0
+scale = Vector2(0.5, 0.5)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+value = 50.0
