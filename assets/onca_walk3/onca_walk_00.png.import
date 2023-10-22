@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dakki343y5tbi"
-path="res://.godot/imported/quina.png-ed24ac7620eace2c4ba591f5f90463ad.ctex"
+uid="uid://bbtl50viyfss7"
+path="res://.godot/imported/onca_walk_00.png-de0e2b4ebe779e1508202c94f5247a0e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/tiles/quina.png"
-dest_files=["res://.godot/imported/quina.png-ed24ac7620eace2c4ba591f5f90463ad.ctex"]
+source_file="res://assets/onca_walk3/onca_walk_00.png"
+dest_files=["res://.godot/imported/onca_walk_00.png-de0e2b4ebe779e1508202c94f5247a0e.ctex"]
 
 [params]
 
