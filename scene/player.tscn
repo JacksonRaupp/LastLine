@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://script/player.cs" id="1_nchvp"]
 [ext_resource type="Texture2D" uid="uid://brl6376pv1c4i" path="res://art/test_player/Walk.png" id="2_55xlr"]
-[ext_resource type="PackedScene" uid="uid://b3gs3htgb4w81" path="res://scene/UI/texture_health_bar.tscn" id="3_untws"]
+[ext_resource type="PackedScene" uid="uid://b3gs3htgb4w81" path="res://scene/UI/health_bar.tscn" id="3_untws"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_h6yvl"]
 atlas = ExtResource("2_55xlr")
@@ -88,7 +88,7 @@ shape = SubResource("CapsuleShape2D_j7qf3")
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(2, 2)
 
-[node name="TextureProgressBar" parent="Camera2D" instance=ExtResource("3_untws")]
+[node name="Health_Bar" parent="Camera2D" instance=ExtResource("3_untws")]
 offset_left = -311.0
 offset_top = -171.0
 offset_right = -271.0
