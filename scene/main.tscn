@@ -1,7 +1,54 @@
+[gd_scene load_steps=21 format=3 uid="uid://bjkcnvjmlqmck"]
 [gd_scene load_steps=4 format=3 uid="uid://bjkcnvjmlqmck"]
 
 [ext_resource type="PackedScene" uid="uid://cbsjrt1locqwq" path="res://scene/level.tscn" id="1_7sn7c"]
+[ext_resource type="PackedScene" uid="uid://038tf76v36sp" path="res://scene/InitialScreen.tscn" id="1_klp67"]
 [ext_resource type="PackedScene" uid="uid://b5k0co8ngs0fq" path="res://scene/player.tscn" id="1_y0q4v"]
+[ext_resource type="PackedScene" uid="uid://bh2blp66w1gci" path="res://scene/jaguar_enemie.tscn" id="3_qfag7"]
+[ext_resource type="Texture2D" uid="uid://crou2jktetu7c" path="res://assets/jaguar/cabeça.png" id="5_t41tj"]
+[ext_resource type="Texture2D" uid="uid://dtsh2o4feywvv" path="res://assets/jaguar/tronco.png" id="6_4e5bs"]
+[ext_resource type="Texture2D" uid="uid://bw10ftfjy8tt5" path="res://assets/jaguar/rabo completo.png" id="7_eaukh"]
+[ext_resource type="Texture2D" uid="uid://c2mmx3hnck21o" path="res://assets/jaguar/perna esquerda.png" id="8_0bm7y"]
+[ext_resource type="Texture2D" uid="uid://bbenu4mj3tati" path="res://assets/jaguar/perna direita.png" id="9_mjk7q"]
+[ext_resource type="Texture2D" uid="uid://71icmqfxsvip" path="res://assets/jaguar/canela direita.png" id="10_gtvan"]
+[ext_resource type="Texture2D" uid="uid://bndl5xchblh1t" path="res://assets/jaguar/canela esquerda.png" id="11_pgfyv"]
+[ext_resource type="Texture2D" uid="uid://bceprujs43ads" path="res://assets/jaguar/braço direito.png" id="12_qyhee"]
+[ext_resource type="Texture2D" uid="uid://rnqpjn0m7gh6" path="res://assets/jaguar/braço esquerda.png" id="13_glylk"]
+[ext_resource type="Texture2D" uid="uid://d0wjlvofac15p" path="res://assets/jaguar/antebraço direito.png" id="14_ivn14"]
+[ext_resource type="Texture2D" uid="uid://b4kmrtrhthfy4" path="res://assets/jaguar/antebraço esquerdo.png" id="15_5ig2c"]
+
+[sub_resource type="Animation" id="Animation_al0k2"]
+resource_name = "Patada"
+
+[sub_resource type="Animation" id="Animation_ps33o"]
+resource_name = "Jump"
+
+[sub_resource type="Animation" id="Animation_vuw4o"]
+resource_name = "Dead"
+
+[sub_resource type="Animation" id="Animation_u8nyo"]
+resource_name = "Walk"
+step = 0.01
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Parts/RightLeg:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1524, 636), Vector2(1530, 636)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_gj3c3"]
+_data = {
+"Dead": SubResource("Animation_vuw4o"),
+"Jump": SubResource("Animation_ps33o"),
+"Patada": SubResource("Animation_al0k2"),
+"Walk": SubResource("Animation_u8nyo")
+}
 [ext_resource type="PackedScene" uid="uid://bh2blp66w1gci" path="res://scene/jaguar_enemie.tscn" id="3_qfag7"]
 
 [node name="Main" type="Node"]
@@ -11,4 +58,80 @@
 [node name="Player" parent="." instance=ExtResource("1_y0q4v")]
 
 [node name="jaguar_enemie" parent="." instance=ExtResource("3_qfag7")]
+position = Vector2(616, 469)
+
+[node name="Onca" type="Node2D" parent="."]
+
+[node name="Parts" type="Node2D" parent="Onca"]
+
+[node name="Head" type="Sprite2D" parent="Onca/Parts"]
+z_index = 10
+position = Vector2(1630, 601)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("5_t41tj")
+
+[node name="Body" type="Sprite2D" parent="Onca/Parts"]
+z_index = 7
+position = Vector2(1565, 619)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("6_4e5bs")
+
+[node name="Tail" type="Sprite2D" parent="Onca/Parts"]
+z_index = 6
+position = Vector2(1548, 583)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("7_eaukh")
+
+[node name="LeftLeg" type="Sprite2D" parent="Onca/Parts"]
+z_index = 6
+position = Vector2(1540, 634)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("8_0bm7y")
+
+[node name="RightLeg" type="Sprite2D" parent="Onca/Parts"]
+z_index = 9
+position = Vector2(1524, 636)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("9_mjk7q")
+
+[node name="RightPaw" type="Sprite2D" parent="Onca/Parts"]
+z_index = 8
+position = Vector2(1525, 662)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("10_gtvan")
+
+[node name="LeftPaw" type="Sprite2D" parent="Onca/Parts"]
+z_index = 5
+position = Vector2(1542, 662)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("11_pgfyv")
+
+[node name="RightArm" type="Sprite2D" parent="Onca/Parts"]
+z_index = 9
+position = Vector2(1588, 626)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("12_qyhee")
+
+[node name="LeftArm" type="Sprite2D" parent="Onca/Parts"]
+z_index = 6
+position = Vector2(1597, 626)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("13_glylk")
+
+[node name="RightForeArm" type="Sprite2D" parent="Onca/Parts"]
+z_index = 8
+position = Vector2(1594, 654)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("14_ivn14")
+
+[node name="LeftForeArm" type="Sprite2D" parent="Onca/Parts"]
+z_index = 5
+position = Vector2(1607, 653)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("15_5ig2c")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Onca"]
+libraries = {
+"": SubResource("AnimationLibrary_gj3c3")
+}
 position = Vector2(536, 456)
