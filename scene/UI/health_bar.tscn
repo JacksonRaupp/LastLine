@@ -5,8 +5,10 @@
 [ext_resource type="Script" path="res://script/health_bar.cs" id="3_gok02"]
 
 [node name="Health_Bar" type="TextureProgressBar"]
-offset_right = 40.0
-offset_bottom = 40.0
+offset_left = 73.0
+offset_top = 94.0
+offset_right = 113.0
+offset_bottom = 134.0
 scale = Vector2(11.0878, 0.392217)
 value = 50.0
 nine_patch_stretch = true
