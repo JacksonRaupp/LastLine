@@ -1,0 +1,86 @@
+[gd_scene load_steps=3 format=3 uid="uid://va3t7uvj24ny"]
+
+[ext_resource type="Texture2D" uid="uid://qvcea5pq85qi" path="res://assets/tutorial/gBot_pieces.png" id="1_vbqss"]
+[ext_resource type="Texture2D" uid="uid://dindkj035b8ch" path="res://assets/tutorial/gBot_complete.png" id="2_udtka"]
+
+[node name="Node2D" type="Node2D"]
+position = Vector2(793, 529)
+
+[node name="polygons" type="Node2D" parent="."]
+
+[node name="arm_right" type="Polygon2D" parent="polygons"]
+position = Vector2(123, 258)
+texture = ExtResource("1_vbqss")
+polygon = PackedVector2Array(35, 27, 86, 10, 140, 45, 99, 188, 114, 207, 126, 284, 146, 306, 114, 362, 47, 363, 18, 284, 25, 198, 34, 187, 16, 160)
+uv = PackedVector2Array(35, 27, 86, 10, 140, 45, 99, 188, 114, 207, 126, 284, 146, 306, 114, 362, 47, 363, 18, 284, 25, 198, 34, 187, 16, 160)
+
+[node name="arm_left" type="Polygon2D" parent="polygons"]
+position = Vector2(140, 237)
+texture = ExtResource("1_vbqss")
+polygon = PackedVector2Array(178, 41, 227, 20, 282, 48, 250, 187, 257, 201, 298, 306, 271, 354, 212, 361, 173, 267, 183, 203)
+uv = PackedVector2Array(178, 41, 227, 20, 282, 48, 250, 187, 257, 201, 298, 306, 271, 354, 212, 361, 173, 267, 183, 203)
+
+[node name="leg_right" type="Polygon2D" parent="polygons"]
+position = Vector2(147, 103)
+texture = ExtResource("1_vbqss")
+polygon = PackedVector2Array(49, 402, 92, 378, 129, 401, 115, 469, 128, 494, 110, 544, 137, 594, 171, 600, 188, 679, 159, 694, 14, 688, 31, 500, 58, 467)
+uv = PackedVector2Array(49, 402, 92, 378, 129, 401, 115, 469, 128, 494, 110, 544, 137, 594, 171, 600, 188, 679, 159, 694, 14, 688, 31, 500, 58, 467)
+
+[node name="leg_left" type="Polygon2D" parent="polygons"]
+position = Vector2(3, 105)
+texture = ExtResource("1_vbqss")
+polygon = PackedVector2Array(277, 399, 318, 375, 348, 404, 336, 471, 348, 496, 329, 550, 351, 593, 388, 606, 415, 683, 387, 702, 238, 696, 247, 507, 277, 472)
+uv = PackedVector2Array(277, 399, 318, 375, 348, 404, 336, 471, 348, 496, 329, 550, 351, 593, 388, 606, 415, 683, 387, 702, 238, 696, 247, 507, 277, 472)
+
+[node name="body" type="Polygon2D" parent="polygons"]
+position = Vector2(-136, 202)
+texture = ExtResource("1_vbqss")
+polygon = PackedVector2Array(388, 40, 442, 10, 486, 38, 490, 83, 530, 180, 487, 250, 495, 275, 486, 331, 422, 355, 350, 326, 340, 268, 369, 244, 347, 219, 339, 104, 382, 75)
+uv = PackedVector2Array(388, 40, 442, 10, 486, 38, 490, 83, 530, 180, 487, 250, 495, 275, 486, 331, 422, 355, 350, 326, 340, 268, 369, 244, 347, 219, 339, 104, 382, 75)
+
+[node name="head" type="Polygon2D" parent="polygons"]
+position = Vector2(-365, -328)
+texture = ExtResource("1_vbqss")
+polygon = PackedVector2Array(488, 487, 479, 456, 477, 354, 510, 319, 557, 315, 549, 279, 618, 241, 657, 253, 694, 243, 768, 259, 767, 291, 798, 296, 826, 342, 810, 361, 816, 512, 697, 529, 529, 534, 530, 503)
+uv = PackedVector2Array(488, 487, 479, 456, 477, 354, 510, 319, 557, 315, 549, 279, 618, 241, 657, 253, 694, 243, 768, 259, 767, 291, 798, 296, 826, 342, 810, 361, 816, 512, 697, 529, 529, 534, 530, 503)
+
+[node name="jaw" type="Polygon2D" parent="polygons"]
+position = Vector2(-354, -418)
+texture = ExtResource("1_vbqss")
+polygon = PackedVector2Array(481, 569, 825, 558, 815, 652, 765, 686, 549, 691, 497, 655)
+uv = PackedVector2Array(481, 569, 825, 558, 815, 652, 765, 686, 549, 691, 497, 655)
+
+[node name="gBot_complete" type="Sprite2D" parent="."]
+position = Vector2(-339, 583)
+texture = ExtResource("2_udtka")
+
+[node name="skeleton" type="Skeleton2D" parent="."]
+position = Vector2(-358, 722)
+
+[node name="hip" type="Bone2D" parent="skeleton"]
+
+[node name="chest" type="Bone2D" parent="skeleton/hip"]
+position = Vector2(0, -50)
+
+[node name="head" type="Bone2D" parent="skeleton/hip/chest"]
+position = Vector2(1, -165)
+
+[node name="jaw" type="Bone2D" parent="skeleton/hip/chest/head"]
+position = Vector2(-63, -56)
+auto_calculate_length_and_angle = false
+length = 150.0
+bone_angle = 0.0
+
+[node name="arm_right" type="Bone2D" parent="skeleton/hip/chest"]
+position = Vector2(-108, -110)
+
+[node name="hand_right" type="Bone2D" parent="skeleton/hip/chest/arm_right"]
+position = Vector2(-7, 103)
+auto_calculate_length_and_angle = false
+length = 150.0
+bone_angle = 90.0
+
+[node name="arm_left" type="Bone2D" parent="skeleton/hip/chest"]
+position = Vector2(66, -120)
+
+[node name="arm_" type="Bone2D" parent="skeleton/hip/chest/arm_left"]
