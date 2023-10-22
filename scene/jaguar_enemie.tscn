@@ -72,7 +72,7 @@ animations = [{
 }]
 
 [node name="jaguar_enemie" type="CharacterBody2D"]
-position = Vector2(665, 408)
+position = Vector2(660, 408)
 scale = Vector2(4, 4)
 script = ExtResource("1_en42n")
 metadata/_edit_group_ = true
@@ -90,5 +90,11 @@ sprite_frames = SubResource("SpriteFrames_en7px")
 animation = &"walk"
 frame_progress = 0.116592
 
-[node name="RayCast2D" type="RayCast2D" parent="."]
-position = Vector2(16, -41.25)
+[node name="RayCast2DGround" type="RayCast2D" parent="."]
+position = Vector2(10.25, -2.75)
+target_position = Vector2(0, 14)
+
+[node name="RayCast2DWall" type="RayCast2D" parent="."]
+position = Vector2(-0.75, 0.5)
+exclude_parent = false
+target_position = Vector2(16.75, 0)

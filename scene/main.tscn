@@ -11,4 +11,16 @@
 [node name="Player" parent="." instance=ExtResource("1_y0q4v")]
 
 [node name="jaguar_enemie" parent="." instance=ExtResource("3_qfag7")]
-position = Vector2(536, 456)
+position = Vector2(550, 634)
+
+[node name="jaguar_enemie2" parent="." instance=ExtResource("3_qfag7")]
+position = Vector2(580, 310)
+
+[node name="jaguar_enemie3" parent="." instance=ExtResource("3_qfag7")]
+position = Vector2(-28, 361)
+
+[node name="jaguar_enemie4" parent="." instance=ExtResource("3_qfag7")]
+position = Vector2(667, 188)
+
+[node name="jaguar_enemie5" parent="." instance=ExtResource("3_qfag7")]
+position = Vector2(271, 85)

@@ -3,7 +3,7 @@ using System;
 
 public partial class jaguar_enemie : CharacterBody2D
 {
-    public const float Speed = 200.0f;
+    public const float Speed = 300.0f;
 	public const float JumpVelocity = -400.0f;
 
     public bool IsMovingLeft  = false;
@@ -40,17 +40,19 @@ public partial class jaguar_enemie : CharacterBody2D
 
     public void TurnAround()
     {
-        var raycast = GetNode<RayCast2D>("RayCast2D");
-        if (!raycast.IsColliding() && IsOnFloor())
+        var raycastGround = GetNode<RayCast2D>("RayCast2DGround");
+        var raycastWall = GetNode<RayCast2D>("RayCast2DWall");
+        if ((!raycastGround.IsColliding() || raycastWall.IsColliding()) && IsOnFloor() && IsMovingLeft)
         {
             IsMovingLeft = !IsMovingLeft;
-            Scale = new Vector2(-4, 4);
-            GD.Print("tumdum");
+            Scale = new Vector2(Scale.X * (-1), Scale.Y);
         }
-        else
+        else if ((!raycastGround.IsColliding() || raycastWall.IsColliding()) && IsOnFloor() && !IsMovingLeft)
         {
-            Scale = new Vector2(4, 4);
+            IsMovingLeft = !IsMovingLeft;
+            Scale = new Vector2(Scale.X * (-1), Scale.Y);
         }
+
     }
 
 }
