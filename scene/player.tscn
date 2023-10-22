@@ -72,7 +72,7 @@ animations = [{
 height = 78.0
 
 [node name="Player" type="CharacterBody2D"]
-position = Vector2(420, 306)
+position = Vector2(564, 360)
 script = ExtResource("1_nchvp")
 metadata/_edit_group_ = true
 
@@ -86,9 +86,10 @@ position = Vector2(0, 5)
 shape = SubResource("CapsuleShape2D_j7qf3")
 
 [node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(2, 2)
 
 [node name="TextureProgressBar" parent="Camera2D" instance=ExtResource("3_untws")]
-offset_left = -620.0
-offset_top = -322.0
-offset_right = -580.0
-offset_bottom = -261.0
+offset_left = -311.0
+offset_top = -171.0
+offset_right = -271.0
+offset_bottom = -110.0
