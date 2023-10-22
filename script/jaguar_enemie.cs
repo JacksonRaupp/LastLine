@@ -3,7 +3,7 @@ using System;
 
 public partial class jaguar_enemie : CharacterBody2D
 {
-    public const float Speed = 300.0f;
+    public const float Speed = 200.0f;
 	public const float JumpVelocity = -400.0f;
 
     public bool IsMovingLeft  = false;

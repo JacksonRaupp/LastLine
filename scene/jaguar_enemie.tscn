@@ -1,6 +1,6 @@
-[gd_scene load_steps=13 format=3 uid="uid://bh2blp66w1gci"]
+[gd_scene load_steps=14 format=3 uid="uid://bh2blp66w1gci"]
 
-[ext_resource type="Script" path="res://scene/jaguar_enemie.cs" id="1_en42n"]
+[ext_resource type="Script" path="res://script/jaguar_enemie.cs" id="1_s0tsl"]
 [ext_resource type="Texture2D" uid="uid://cyni6nryv7l0y" path="res://assets/jaguar_enemie/cat.png" id="2_kfmqo"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_bulic"]
@@ -71,10 +71,13 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4np5w"]
+size = Vector2(18.375, 6)
+
 [node name="jaguar_enemie" type="CharacterBody2D"]
 position = Vector2(660, 408)
 scale = Vector2(4, 4)
-script = ExtResource("1_en42n")
+script = ExtResource("1_s0tsl")
 metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -98,3 +101,9 @@ target_position = Vector2(0, 14)
 position = Vector2(-0.75, 0.5)
 exclude_parent = false
 target_position = Vector2(16.75, 0)
+
+[node name="PlayerDetector" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerDetector"]
+position = Vector2(15, -0.5)
+shape = SubResource("RectangleShape2D_4np5w")
